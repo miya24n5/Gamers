@@ -1,24 +1,45 @@
-# README
+# <Gamers>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+<目的>
+このゲームの面白さ、楽しさを共有したい！という人と
+ゲームが好きで、でも今は忙しくてゲームができない。
+でもいつかのために面白そうなゲームを見つけておきたい。
+そんな方々の共有を目的としている。
 
-Things you may want to cover:
+### サイトテーマ
+ゲーム情報共有、収集
 
-* Ruby version
+### テーマを選んだ理由
+ゲームが昔から好きなのでざっくりとゲームをテーマにしようと考えました。
+今、自分には全然ゲームをする時間がなく、でも新しいゲームはどんどん出る。
+と言う状況にあったので色んなゲームのレビューを見れないかなと思ったのがきっかけで
+このテーマになりました。
 
-* System dependencies
+### ターゲットユーザ
+・ゲームが好きな人
+・ゲームのレビューをしたい人
+・ゲームの情報が欲しい人
+・ゲームをあまりやったことがないけど興味があり何から始めればいいのか知りたい人
 
-* Configuration
+### 主な利用シーン
+・ゲームの情報が欲しい時。
+・ゲームのレビューを共有したい時。
+・初心者の人でも始められるゲームがあるか知りたい時。
 
-* Database creation
+## 設計書
 
-* Database initialization
 
-* How to run the test suite
+## チャレンジ要素一覧
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
