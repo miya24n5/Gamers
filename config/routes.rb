@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "homes#top"
 
-  resources :games, only: [:new, :index, :show, :edit, :create, :update, :dstroy] do
-    resources :game_comments, only: [:create, :dstroy]
-    resource :favorites, only: [:create, :dstroy]
+  resources :games, only: [:new, :index, :show, :edit, :create, :update, :destroy] do
+    resources :game_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
 
   resources :users, only: [:index, :show, :edit, :update] do
