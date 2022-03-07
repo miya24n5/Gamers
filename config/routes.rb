@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
+  get 'users/edit'
   devise_for :users
   get 'games/index'
   get 'games/show'
