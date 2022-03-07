@@ -49,5 +49,7 @@
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
-## 使用素材
-- 今の所なし
+## 使用素材(予定)
+- [ロゴ](https://www.designevo.com/)
+- [FontAwesome](https://fontawesome.com/)
+- 
