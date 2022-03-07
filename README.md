@@ -35,8 +35,8 @@
 - 初心者の人でも始められるゲームがあるか知りたい時。  
 
 ## 設計書
-- https://docs.google.com/spreadsheets/d/1u98mboqe5V-EKDfiM9R-tCOlZBxZsVEy02uJhdK7hGs/edit#gid=856357510  
-- https://app.diagrams.net/#G1G_cxDBO6vPljsFdVmmnDQr_okuIycZ2R  
+- [ER図](https://docs.google.com/spreadsheets/d/1u98mboqe5V-EKDfiM9R-tCOlZBxZsVEy02uJhdK7hGs/edit#gid=856357510)  
+- [テーブル定義書](https://app.diagrams.net/#G1G_cxDBO6vPljsFdVmmnDQr_okuIycZ2R)  
 
 
 ## チャレンジ要素一覧
