@@ -9,7 +9,23 @@
 <%= f.text_area :body %>
 
 
-<!--星レビュー変更欄-->
+<div id="star">
+       <%= f.label :star, '評価' %>
+       <%= f.hidden_field :star, id: :game_star %>
+      </div>
+
+     <!--星評価javascript-->
+      <script>
+      $('#star').raty({
+        size     : 36,
+        starOff: '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+
+        scoreName: 'game[star]',
+        half: true,
+      });
+      </script>
 
 
 <%= f.submit %>

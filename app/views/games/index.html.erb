@@ -1,20 +1,41 @@
-<h1>ゲームタイトル一覧</h1>
-
-
-<% @games.each do |game| %>
-
-タイトル
-<%= link_to game_path(game.id) do %>
-<%= game.title %>
-<% end %>
-<!--タイトルにlink_toで詳細画面に-->
-
-<!--星レビュー-->
-会員名
-<%= game.user.name %>
-<!--link_toで会員詳細へ-->
-
-<!--いいねの数-->
-
-
-<% end %>
+<table class="table table-hover table-inverse">
+    <h1 class="mt-5">ゲームタイトル一覧</h1>
+    <thead>
+        <tr>
+            <th>タイトル</th>
+            <th>評価</th>
+            <th>名前</th>
+            <th>いいね</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @games.each do |game| %>
+        <tr>
+            <td>
+                <!--titleにlink_toで詳細画面に-->
+                <%= link_to game_path(game.id) do %>
+                <%= game.title %>
+                <% end %>
+            </td>
+            <td>
+                <!--星レビュー表示-->
+                <div id="star-rate-<%= game.id %>"></div>
+                <script>
+                  $('#star-rate-<%= game.id %>').raty({
+                    size: 36,
+                    starOff:  '<%= asset_path('star-off.png') %>',
+                    starOn : '<%= asset_path('star-on.png') %>',
+                    starHalf: '<%= asset_path('star-half.png') %>',
+                    half: true,
+                    readOnly: true,
+                    score: '<%= game.star %>',
+                  });
+                </script>
+            </td>
+            <td>
+                <%= game.user.name %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

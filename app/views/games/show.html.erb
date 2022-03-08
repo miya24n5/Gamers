@@ -4,6 +4,20 @@
 
 <%= @game.body %>
 
+<!--星レビュー表示-->
+                <div id="star-rate-<%= @game.id %>"></div>
+                <script>
+                  $('#star-rate-<%= @game.id %>').raty({
+                    size: 36,
+                    starOff:  '<%= asset_path('star-off.png') %>',
+                    starOn : '<%= asset_path('star-on.png') %>',
+                    starHalf: '<%= asset_path('star-half.png') %>',
+                    half: true,
+                    readOnly: true,
+                    score: '<%= @game.star %>',
+                  });
+                </script>
+
 <!--コメント投稿欄-->
 
 <!--いいねボタン-->

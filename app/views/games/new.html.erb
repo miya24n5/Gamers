@@ -1,31 +1,46 @@
-<h1>新規ゲームレビュー</h1>
-<%= form_with model:@game, local:true do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 mx-auto">
+    <h1 class="mt-5">New レビュー</h1>
+    <%= form_with model:@game, local:true do |f| %>
+    <div class="row">
+      <div class="col-ml-6 mx-auto">
+        <%= f.label :タイトル %>
+      </div>
+    </div>
+    <div class="col-ml-6">
+      <%= f.text_field :title %>
+    </div>
 
-<%= f.label :タイトル %>
-<%= f.text_field :title %>
-
-<%= f.label :レビュー %>
-<%= f.text_area :body %>
-
-
-
-   <%#= f.label :star,'評価', class:"" %>
-   <%#= f.hidden_field :star, id: :game_star %>
+    <div class="col-ml-6">
+      <%= f.label :レビュー %>
+    </div>
+    <div class="col-ml-6">
+      <%= f.text_area :body %>
+    </div>
 
 
-<!-- 星評価javascript -->
-  <!--<script>-->
-  <!--$('#star').raty({-->
-  <!--  size     : 36,-->
-  <!--  starOff:  '<%#= asset_path('star-off.png') %>',-->
-  <!--  starOn : '<%#= asset_path('star-on.png') %>',-->
-  <!--  starHalf: '<%#= asset_path('star-half.png') %>',-->
+      <div id="star">
+       <%= f.label :star, '評価' %>
+       <%= f.hidden_field :star, id: :game_star %>
+      </div>
 
-  <!--  scoreName: 'game[star]',-->
-  <!--  half: true,-->
-  <!--});-->
-  <!--</script>-->
+     <!--星評価javascript-->
+      <script>
+      $('#star').raty({
+        size     : 36,
+        starOff: '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
 
-<%= f.submit '投稿' %>
+        scoreName: 'game[star]',
+        half: true,
+      });
+      </script>
 
-<% end %>
+      <%= f.submit '投稿' %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
