@@ -1,8 +1,10 @@
 const { environment } = require('@rails/webpacker')
 
+
+
 module.exports = environment
 
-
+yarnでjqueryを追加したら自動で記述される
 const webpack = require('webpack')
 environment.plugins.prepend(
   'Provide',
