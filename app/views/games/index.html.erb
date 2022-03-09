@@ -6,6 +6,7 @@
             <th>評価</th>
             <th>名前</th>
             <th>いいね</th>
+            <th>コメント数</th>
         </tr>
     </thead>
     <tbody>
@@ -33,7 +34,16 @@
                 </script>
             </td>
             <td>
+                <!--userの名前-->
                 <%= game.user.name %>
+            </td>
+            <td>
+                <!--いいねの件数-->
+                ❤<%= game.favorites.count %>件のいいね
+            </td>
+            <td>
+                <!--コメントの件数-->
+                <%= game.game_comments.count %>件のコメント
             </td>
         </tr>
         <% end %>
