@@ -36,17 +36,10 @@
 <%= f.submit "送信" %>
 <% end %>
 
-<!--いいねボタン-->
-<% if @game.favorited_by?(current_user) %>
-<%= link_to game_favorites_path(@game), method: :delete do %>
-❤<%= @game.favorites.count %>いいね
-<% end %>
-<% else %>
-<%= link_to game_favorites_path(@game), method: :post do %>
-♡<%= @game.favorites.count %>いいね
-<% end %>
-<% end %>
-
+<!--いいねボタンの部分テンプレート-->
+<div id="favorites_<%= @game.id %>">
+<%= render "favorites/favorites", game: @game %>
+</div>
 
 
 <!--投稿日時-->

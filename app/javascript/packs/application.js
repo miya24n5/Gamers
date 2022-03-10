@@ -14,6 +14,8 @@ import "popper.js";
 import "bootstrap";
 import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
+import 'packs/homes.css'
+import 'packs/games.css'
 
 
 // 星レビューに必要
@@ -28,3 +30,7 @@ require('packs/raty')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+// いいね機能の非同期化
+//= require jquery
+//= require rails-ujs
