@@ -1,7 +1,22 @@
-<h1><%= @user.name %></h1>
+<h2><%= @user.name %></h2>
 
+
+
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
 <%= image_tag @user.get_profile_image(100,100) %>
 
 <%= @user.introduction %>
 
 <%= link_to "Profile編集", edit_user_path(@user) %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
