@@ -1,6 +1,15 @@
-<h1>ゲームレビュー詳細</h1>
+<h2>ゲームレビュー詳細</h2>
 
-<%= @game.title %>
+
+
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <%= @game.title %><br>
 
 <%= @game.body %>
 
@@ -21,20 +30,7 @@
 <!--コメントの数-->
 <%= @game.game_comments.count %>件のコメント<br>
 
-<!--コメント機能-->
-<% @game.game_comments.each do |game_comment| %>
-<%= image_tag game_comment.user.get_profile_image(100,100) %>
-<%= game_comment.user.name %>
-<%= game_comment.created_at.strftime('%Y/%m/%d') %><%= game_comment.comment %>
-<% if game_comment.user == current_user %>
-<%= link_to "削除", game_game_comment_path(game_comment.game, game_comment), method: :delete %>
-<% end %>
-<% end %>
 
-<%= form_with model: [@game, @game_comment] do |f| %>
-<%= f.text_area :comment, rows: '5', placeholder: "コメント記入欄" %>
-<%= f.submit "送信" %>
-<% end %>
 
 <!--いいねボタンの部分テンプレート-->
 <div id="favorites_<%= @game.id %>">
@@ -50,3 +46,38 @@
 <%= link_to '編集', edit_game_path(@game) %>
 <%= link_to '削除', game_path(@game), method: :delete, data: { confirm: '本当に削除しますか？' } %>
 <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <!--コメント機能-->
+
+<%= form_with model: [@game, @game_comment] do |f| %>
+<%= f.text_area :comment, rows: '5', placeholder: "コメント記入欄" %>
+<%= f.submit "送信" %>
+<% end %>
+<% @game.game_comments.each do |game_comment| %>
+<%= image_tag game_comment.user.get_profile_image(100,100) %>
+<%= game_comment.user.name %>
+<%= game_comment.created_at.strftime('%Y/%m/%d') %><%= game_comment.comment %>
+<% if game_comment.user == current_user %>
+<%= link_to "削除", game_game_comment_path(game_comment.game, game_comment), method: :delete %>
+<% end %>
+<% end %>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

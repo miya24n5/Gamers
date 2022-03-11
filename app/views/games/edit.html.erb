@@ -1,5 +1,14 @@
-<h1>ゲームレビュー編集</h1>
+<h2>ゲームレビュー編集</h2>
 
+
+
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
 <%= form_with model:@game, local:true do |f| %>
 
 <%= f.label :タイトル %>
@@ -28,6 +37,12 @@
       </script>
 
 
-<%= f.submit %>
+<%= f.submit "編集" %>
 
 <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

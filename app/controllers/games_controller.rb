@@ -35,14 +35,14 @@ class GamesController < ApplicationController
     if @game.update(game_params)
       redirect_to game_path(@game)
     else
-      render show
+      render game_path(@game)
     end
   end
 
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
-    redirect_to index
+    redirect_to games_path
   end
 
 

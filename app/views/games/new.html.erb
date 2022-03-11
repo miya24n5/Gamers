@@ -1,10 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 mx-auto">
-    <h1 class="mt-5">New レビュー</h1>
-    <%= form_with model:@game, local:true do |f| %>
+<h2>New レビュー</h2>
+
+
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+<%= form_with model:@game, local:true do |f| %>
     <div class="row">
-      <div class="col-ml-6 mx-auto">
+      <div class="col-ml-6">
         <%= f.label :タイトル %>
       </div>
     </div>
@@ -41,6 +47,9 @@
       <%= f.submit '投稿' %>
 
       <% end %>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
