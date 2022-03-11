@@ -1,2 +1,42 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+main {
+  background-color: black;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:  100vh;
+}
+
+.text
+{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.text h2
+{
+    position: relative;
+    color: #3BB0FF;
+    font-weight: 600;
+    font-size: 16em;
+    -webkit-box-reflect: below -70px linear-gradient(transparent, #0008);
+    text-shadow: 0 0 10px #3B4EFF,
+                0 0 40px #3B4EFF,
+                0 0 80px #3B4EFF,
+                0 0 160px #3B4EFF,
+                0 0 240px #3B4EFF;
+
+}

@@ -1,51 +1,45 @@
-<table class="table table-hover table-inverse">
-    <h1 class="mt-5">ゲームタイトル一覧</h1><%= link_to "新規レビュー", new_game_path %>
-    <thead>
-        <tr>
-            <th>タイトル</th>
-            <th>評価</th>
-            <th>名前</th>
-            <th>いいね</th>
-            <th>コメント数</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @games.each do |game| %>
-        <tr>
-            <td>
-                <!--titleにlink_toで詳細画面に-->
-                <%= link_to game_path(game.id) do %>
-                <%= game.title %>
-                <% end %>
-            </td>
-            <td>
-                <!--星レビュー表示-->
-                <div id="star-rate-<%= game.id %>"></div>
-                <script>
-                  $('#star-rate-<%= game.id %>').raty({
-                    size: 36,
-                    starOff:  '<%= asset_path('star-off.png') %>',
-                    starOn : '<%= asset_path('star-on.png') %>',
-                    starHalf: '<%= asset_path('star-half.png') %>',
-                    half: true,
-                    readOnly: true,
-                    score: '<%= game.star %>',
-                  });
-                </script>
-            </td>
-            <td>
-                <!--userの名前-->
-                <%= game.user.name %>
-            </td>
-            <td>
-                <!--いいねの件数-->
-                ❤<%= game.favorites.count %>件のいいね
-            </td>
-            <td>
-                <!--コメントの件数-->
-                <%= game.game_comments.count %>件のコメント
-            </td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+<div class="continer">
+    <h1>Game一覧</h1>
+    <div class="row">
+        <div class="col">
+            <%= link_to "新規レビュー", new_game_path %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-lg-4 col-md-6">
+            <% @games.each do |game| %>
+                <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                    <h5 class="card-header bg-dark">
+                        <%= link_to game_path(game.id) do %>
+                        <%= game.title %>
+                        <% end %>
+                    </h5>
+                    <div class="card-body">
+                        <div class="card-title">
+                            評価<br>
+                            <div id="star-rate-<%= game.id %>"></div>
+                            <script>
+                                $('#star-rate-<%= game.id %>').raty({
+                                    size: 36,
+                                    starOff:  '<%= asset_path('star-off.png') %>',
+                                    starOn : '<%= asset_path('star-on.png') %>',
+                                    starHalf: '<%= asset_path('star-half.png') %>',
+                                    half: true,
+                                    readOnly: true,
+                                    score: '<%= game.star %>',
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <p class="card-text">
+                        投稿者: <%= game.user.name %><br>
+                        いいね数: <%= game.favorites.count %><br>
+                        コメント数: <%= game.game_comments.count %>
+                    </p>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
