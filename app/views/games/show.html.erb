@@ -1,4 +1,4 @@
-<h2>ゲームレビュー詳細</h2>
+<h1>ゲームレビュー詳細</h1>
 
 
 
@@ -43,8 +43,13 @@
 
 
 <% if @game.user == current_user %>
-<%= link_to '編集', edit_game_path(@game) %>
-<%= link_to '削除', game_path(@game), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+<button type="button" class="btn btn-outline-info">
+  <%= link_to '編集', edit_game_path(@game), class: "text-info"; %>
+</button>
+
+<button type="button" class="btn btn-outline-danger">
+  <%= link_to '削除', game_path(@game), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "text-danger"; %>
+</button>
 <% end %>
 
         </div>

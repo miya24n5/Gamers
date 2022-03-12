@@ -40,3 +40,21 @@ main {
                 0 0 240px #3B4EFF;
 
 }
+
+
+h1 {
+  width: 30%;
+  position: relative;
+  padding: 1rem 2rem calc(1rem + 10px);
+  background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+}
+
+h1:before {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border: 4px solid #fff;
+}
