@@ -1,28 +1,36 @@
-<h1>Follow User</h1>
-<% if @users.exists? %>
-  <% @users.each do |user| %>
-    <table class='table'>
-      <head>
+<h1 class="h1-tagu">フォロー中</h1>
+<div class="container ">
+  <div class="row">
+    <% if @users.exists? %>
+    <table class='table bg-white'>
+      <thead>
         <tr>
           <th>image</th>
           <th>name</th>
           <th></th>
           <th></th>
           <th></th>
-          <th arign='6'></th>
+          <th></th>
         </tr>
-      </head>
+      </thead>
       <tbody>
+        <% @users.each do |user| %>
         <tr>
-          <td><%= image_tag user.get_profile_image(100,100) %></td>
+          <td><%= image_tag user.get_profile_image(50,50),class: "rounded-circle"; %></td>
           <td><%= user.name %></td>
+          <td>投稿数<%= user.games.count %></td>
           <td>フォロー数:<%= user.followings.count %></td>
           <td>フォロワー数:<%= user.followers.count %></td>
           <td><%= link_to 'Show', user, class: 'user_#{user.id}' %></td>
         </tr>
+        <% end %>
       </tbody>
     </table>
-  <% end %>
-<% else %>
-  ユーザーはいません
-<% end %>
+    <% else %>
+      <button>
+        ユーザーはいません
+      </button>
+    <% end %>
+  </div>
+</div>
+

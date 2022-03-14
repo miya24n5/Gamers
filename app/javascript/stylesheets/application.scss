@@ -5,11 +5,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 main {
   background-color: black;
+  padding-top: 30px;
 }
 
 .top {
@@ -17,6 +18,7 @@ main {
     justify-content: center;
     align-items: center;
     min-height:  100vh;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .text
@@ -26,7 +28,7 @@ main {
     text-align: center;
 }
 
-.text h2
+.home-top-title
 {
     position: relative;
     color: #3BB0FF;
@@ -42,14 +44,15 @@ main {
 }
 
 
-h1 {
+.h1-tagu {
+  margin: 0px 30px 30px;
   width: 30%;
   position: relative;
   padding: 1rem 2rem calc(1rem + 10px);
   background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
 }
 
-h1:before {
+.h1-tagu:before {
   position: absolute;
   top: -7px;
   left: -7px;

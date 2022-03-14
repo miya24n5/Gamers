@@ -1,53 +1,35 @@
-<h1>New レビュー</h1>
-
-
+<h1 class="h1-tagu">New レビュー</h1>
 <div class="card-list-container py-5">
-
   <div class="card w-50 mx-auto mt-4 shadow-lg">
-
     <div class="card-body">
       <div class="row">
         <div class="col-12">
-<%= form_with model:@game, local:true do |f| %>
-    <div class="row">
-      <div class="col-ml-6">
-        <%= f.label :タイトル %>
-      </div>
-    </div>
-    <div class="col-ml-6">
-      <%= f.text_field :title %>
-    </div>
-
-    <div class="col-ml-6">
-      <%= f.label :レビュー %>
-    </div>
-    <div class="col-ml-6">
-      <%= f.text_area :body %>
-    </div>
-
-
-      <div id="star">
-       <%= f.label :star, '評価' %>
-       <%= f.hidden_field :star, id: :game_star %>
-      </div>
-
-     <!--星評価javascript-->
-      <script>
-      $('#star').raty({
-        size     : 36,
-        starOff: '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-
-        scoreName: 'game[star]',
-        half: true,
-      });
-      </script>
-
-      <%= f.submit '投稿' %>
-
-      <% end %>
-
+          <%= form_with model:@game, local:true do |f| %>
+            <div class="form-group">
+              <label for="title">タイトル</label>
+              <input type="title" class="form-control" id="title" placeholder="ゲームタイトル">
+            </div>
+            <div class="form-group">
+              <label for="inputText">レビュー</label>
+              <textarea id="body" class="form-control" placeholder="レビューを入力"></textarea>
+            </div>
+            <div id="star">
+              <%= f.label :star, '評価' %>
+              <%= f.hidden_field :star, id: :game_star %>
+            </div>
+            <!--星評価javascript-->
+            <script>
+              $('#star').raty({
+                size     : 36,
+                starOff: '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'game[star]',
+                half: true,
+              });
+            </script>
+            <%= f.submit '投稿' %>
+          <% end %>
         </div>
       </div>
     </div>
