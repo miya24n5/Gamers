@@ -1,37 +1,31 @@
 <h1 class="h1-tagu">Game</h1>
-
-
 <div class="texts-wrapper mt-5">
-
-     <div class="row">
-       <% @games.each do |game| %>
-         <div class="col-12 col-md-6 col-lg-4">
-           <div class="game-card">
-               <%= link_to game_path(game.id) do %>
-                            <h4><%= game.title %></h4>
-                        <% end %>
-
-                                評価
-                                <div id="star-rate-<%= game.id %>"></div>
-                                <script>
-                                    $('#star-rate-<%= game.id %>').raty({
-                                        size: 36,
-                                        starOff:  '<%= asset_path('star-off.png') %>',
-                                        starOn : '<%= asset_path('star-on.png') %>',
-                                        starHalf: '<%= asset_path('star-half.png') %>',
-                                        half: true,
-                                        readOnly: true,
-                                        score: '<%= game.star %>',
-                                        });
-                                </script>
-
-                                投稿者: <%= game.user.name %><br>
-                                いいね数: <%= game.favorites.count %><br>
-                                コメント数: <%= game.game_comments.count %>
-
-           </div>
-         </div>
-       <% end %>
-     </div>
-   </div>
+    <div class="row">
+        <% @games.each do |game| %>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="game-card rounded text-center">
+                <%= link_to game_path(game.id) do %>
+                <h4><%= game.title %></h4>
+                <% end %>
+                評価
+                <div id="star-rate-<%= game.id %>"></div>
+                    <script>
+                        $('#star-rate-<%= game.id %>').raty({
+                            size: 36,
+                            starOff:  '<%= asset_path('star-off.png') %>',
+                            starOn : '<%= asset_path('star-on.png') %>',
+                            starHalf: '<%= asset_path('star-half.png') %>',
+                            half: true,
+                            readOnly: true,
+                            score: '<%= game.star %>',
+                        });
+                    </script>
+                    投稿者: <%= game.user.name %><br>
+                    いいね数: <%= game.favorites.count %><br>
+                    コメント数: <%= game.game_comments.count %>
+                </div>
+            </div>
+        <% end %>
+        </div>
+    </div>
  </div>
