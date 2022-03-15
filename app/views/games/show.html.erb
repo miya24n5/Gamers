@@ -1,10 +1,10 @@
 <h1 class="h1-tagu">ゲームレビュー詳細</h1>
 <div class="card-list-container py-5">
-  <div class="card w-50 mx-auto mt-4 shadow-lg">
+  <div class="card w-50 shadow-lg">
     <div class="card-body">
       <div class="row">
         <div class="col-12">
-          <%= @game.title %><br>
+          <h4><%= @game.title %></h4><br>
           <%= @game.body %>
           <!--星レビュー表示-->
           <div id="star-rate-<%= @game.id %>"></div>
@@ -40,26 +40,24 @@
     </div>
   </div>
 </div>
-<div class="card-list-container py-5">
-  <div class="card w-50 mx-auto mt-4 shadow-lg">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-12">
-          <!--コメント機能-->
-          <%= form_with model: [@game, @game_comment] do |f| %>
-            <%= f.text_area :comment, rows: '5', placeholder: "コメント記入欄" %>
-            <%= f.submit "送信" %>
-          <% end %>
-          <% @game.game_comments.each do |game_comment| %>
-            <%= image_tag game_comment.user.get_profile_image(100,100) %>
-            <%= game_comment.user.name %>
-            <%= game_comment.created_at.strftime('%Y/%m/%d') %><%= game_comment.comment %>
-            <% if game_comment.user == current_user %>
-              <%= link_to "削除", game_game_comment_path(game_comment.game, game_comment), method: :delete %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <!--コメント機能-->
+      <%= form_with model: [@game, @game_comment] do |f| %>
+        <%= f.text_area :comment, rows: '5', placeholder: "コメント記入欄" %>
+        <%= f.submit "送信" %>
+      <% end %>
     </div>
   </div>
+</div>
+<div class="col-7">
+  <% @game.game_comments.each do |game_comment| %>
+    <%= image_tag game_comment.user.get_profile_image(40,40),class: "rounded-circle"; %>
+    <%= game_comment.user.name %>
+    <%= game_comment.created_at.strftime('%Y/%m/%d') %><%= game_comment.comment %>
+    <% if game_comment.user == current_user %>
+      <%= link_to "削除", game_game_comment_path(game_comment.game, game_comment), method: :delete %>
+    <% end %>
+  <% end %>
 </div>

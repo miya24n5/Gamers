@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit]
+  before_action :admin_user,     only: :destroy
 
   def index
     @users = User.all
@@ -26,6 +27,14 @@ class UsersController < ApplicationController
   end
 
 
+  # userを退会させるためのdestroy
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_path
+  end
+
+
   private
 
   def user_params
@@ -36,6 +45,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
       redirect_to (current_user) unless @user == current_user
   end
+
+  # 管理者かどうか確認
+    def admin_user
+      redirect_to(user_path) unless current_user.admin?
+    end
 
 
 

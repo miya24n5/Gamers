@@ -7,7 +7,7 @@
           <%= form_with model:@game, local:true do |f| %>
             <div class="form-group">
               <label for="title">タイトル</label>
-              <input type="title" class="form-control" id="title" placeholder="ゲームタイトル">
+              <input type="title" class="form-control" id="title" placeholder="タイトルを入力">
             </div>
             <div class="form-group">
               <label for="inputText">レビュー</label>
@@ -28,7 +28,7 @@
                 half: true,
               });
             </script>
-            <%= f.submit '投稿' %>
+            <%= f.submit 'レビュー', class: "btn-primary mt-3 text-dark" %>
           <% end %>
         </div>
       </div>
