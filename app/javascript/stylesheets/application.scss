@@ -8,9 +8,17 @@
 
 }
 
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
 main {
   background-color: black;
   padding-top: 30px;
+  flex: 1;
 }
 
 .top {
@@ -101,4 +109,13 @@ main {
 {
   font-size: 1.5em;
   color: #ead6ff;
+}
+
+.game-card
+{
+  background-color: white;
+  margin: 0 auto 60px;
+  max-width: 376px;
+  height: 170px;
+  text-align: left;
 }

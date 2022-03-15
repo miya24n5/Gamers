@@ -1,15 +1,16 @@
 <h1 class="h1-tagu">Game</h1>
-<% @games.each do |game| %>
-    <div class="card-list-container py-5">
-        <div class="card w-50 mx-auto mt-4 shadow-lg">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12">
-                        <%= link_to game_path(game.id) do %>
+
+
+<div class="texts-wrapper mt-5">
+
+     <div class="row">
+       <% @games.each do |game| %>
+         <div class="col-12 col-md-6 col-lg-4">
+           <div class="game-card">
+               <%= link_to game_path(game.id) do %>
                             <h4><%= game.title %></h4>
                         <% end %>
-                        <div class="row">
-                            <div class="col-6">
+
                                 評価
                                 <div id="star-rate-<%= game.id %>"></div>
                                 <script>
@@ -23,18 +24,14 @@
                                         score: '<%= game.star %>',
                                         });
                                 </script>
-                            </div>
-                        </div>
-                        <div class="col-6">
 
                                 投稿者: <%= game.user.name %><br>
                                 いいね数: <%= game.favorites.count %><br>
                                 コメント数: <%= game.game_comments.count %>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<% end %>
+           </div>
+         </div>
+       <% end %>
+     </div>
+   </div>
+ </div>

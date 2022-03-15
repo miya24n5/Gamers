@@ -1,4 +1,12 @@
 <h1 class="h1-tagu">New レビュー</h1>
+<% if @game.errors.any? %>
+  <%= @game.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @game.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <div class="card-list-container py-5">
   <div class="card w-50 mx-auto mt-4 shadow-lg">
     <div class="card-body">
@@ -6,12 +14,12 @@
         <div class="col-12">
           <%= form_with model:@game, local:true do |f| %>
             <div class="form-group">
-              <label for="title">タイトル</label>
-              <input type="title" class="form-control" id="title" placeholder="タイトルを入力">
+              <%= f.label :title %>
+              <%= f.text_field :title, class: 'form-control' %>
             </div>
             <div class="form-group">
-              <label for="inputText">レビュー</label>
-              <textarea id="body" class="form-control" placeholder="レビューを入力"></textarea>
+              <%= f.label :レビュー %>
+              <%= f.text_area :body, class: 'form-control' %>
             </div>
             <div id="star">
               <%= f.label :star, '評価' %>
