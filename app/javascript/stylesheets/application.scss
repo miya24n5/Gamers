@@ -21,6 +21,8 @@ main {
   flex: 1;
 }
 
+
+// top画面のデザイン
 .top {
     display: flex;
     justify-content: center;
@@ -28,14 +30,12 @@ main {
     min-height:  100vh;
     font-family: 'Source Sans Pro', sans-serif;
 }
-
 .text
 {
     position: relative;
     width: 100%;
     text-align: center;
 }
-
 .home-top-title
 {
     position: relative;
@@ -52,6 +52,7 @@ main {
 }
 
 
+// 色んな画面の見出しのデザイン
 .h1-tagu {
   margin: 0px 30px 30px;
   width: 30%;
@@ -70,6 +71,8 @@ main {
   border: 4px solid #fff;
 }
 
+
+// ヘッダーの色とサイズ
 .home
 {
   font-size: 1.5em;
@@ -111,6 +114,8 @@ main {
   color: #ead6ff;
 }
 
+
+// ゲーム一覧の表示方法
 .game-card
 {
   background-color: white;
@@ -119,3 +124,37 @@ main {
   height: 170px;
   text-align: left;
 }
+
+
+// ゲーム詳細画面のgametitleのアンダーライン
+.game-title
+{
+  background:linear-gradient(transparent 70%, #9eff9e 0%);
+}
+
+
+// コメントを無限スクロールにするcss
+.gm-comment
+{
+  padding: 5px;
+  width: 500px;
+  height: 200px;
+  overflow: scroll;
+  background: white;
+  white-space: nowrap;
+}
+/* スクロールバーの幅と高さを設定する */
+.gm-comment::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+/* スクロールバーの形を設定する */
+.gm-comment::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+}
+/* スクロールバーの色を設定する */
+.gm-comment::-webkit-scrollbar-thumb {
+
+  background-color: #a9a9a9;
+}
+

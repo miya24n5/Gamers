@@ -10,7 +10,8 @@
                 評価
                 <div id="star-rate-<%= game.id %>"></div>
                     <script>
-                        $('#star-rate-<%= game.id %>').raty({
+                        $('#star-rate-<%= game.id %>').empty();
+                            $('#star-rate-<%= game.id %>').raty({
                             size: 36,
                             starOff:  '<%= asset_path('star-off.png') %>',
                             starOn : '<%= asset_path('star-on.png') %>',
