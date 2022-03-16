@@ -22,48 +22,90 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-              <li>
-                <%= link_to user_path(current_user),class: 'nav-link text-light mr-5' do %>
-                <i class="fas fa-home home"></i>
+              <li style="--clr:#7fff7f">
+                <%= link_to user_path(current_user) do %>
+                <object><a data-text="Mypage">Mypage</a></object>
                 <% end %>
               </li>
-              <li>
-                <%=  link_to users_path,class: 'nav-link text-light mr-5' do %>
-                <i class="fas fa-users user"></i>
+              <li style="--clr:#7fbfff">
+                <%= link_to users_path do %>
+                <object><a data-text="User">User</a></object>
                 <% end %>
               </li>
-              <li>
-                <%=  link_to games_path ,class: 'nav-link text-light mr-5' do %>
-                <i class="fas fa-gamepad game"></i>
+              <li style="--clr:#ff7fbf">
+                <%= link_to games_path do %>
+                <object><a data-text="Game">Game</a></object>
                 <% end %>
               </li>
-              <li>
-                <%= link_to new_game_path, class: 'nav-link text-light mr-5' do %>
-                <i class="far fa-plus-square plus"></i>
+              <li style="--clr:#ffbf7f">
+                <%= link_to new_game_path do %>
+                <object><a data-text="New">New</a></object>
                 <% end %>
               </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light mr-5' do %>
-                <i class="fas fa-sign-out-alt logout"></i>
+              <li style="--clr:#bf7fff">
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                <object><a data-text="LogOut">Logout</a></object>
                 <% end %>
               </li>
 
               <% else %>
-              <li>
-                <%= link_to games_path, class: 'nav-link text-light mr-5' do %>
-                  <i class="fas fa-gamepad game"></i>
+              <li style="--clr:#ff7fbf">
+                <%= link_to games_path do %>
+                  <object><a data-text="Game">Game</a></object>
                 <% end %>
               </li>
-              <li>
-                <%= link_to new_user_registration_path, class: 'nav-link text-light mr-5' do %>
-                  <i class="fas fa-user-plus signup"></i>
+              <li style="--clr:#bf7fff">
+                <%= link_to new_user_registration_path do %>
+                  <object><a data-text="&nbsp;SignUp">&nbsp;Signup&nbsp;</a></object>
                 <% end %>
               </li>
-              <li>
-                <%= link_to new_user_session_path, class: 'nav-link text-light mr-5' do %>
-                 <i class="fas fa-sign-in-alt login"></i>
+              <li style="--clr:#bf7fff">
+                <%= link_to new_user_session_path do %>
+                 <object><a data-text="&nbsp;SignIn">&nbsp;Signin&nbsp;</a></object>
                 <% end %>
               </li>
+              <!--<li>-->
+              <!--  <%#= link_to user_path(current_user),class: 'nav-link text-light mr-5' do %>-->
+              <!--  <i class="fas fa-home home"></i>-->
+              <!--  <%# end %>-->
+              <!--</li>-->
+              <!--<li>-->
+              <!--  <%#=  link_to users_path,class: 'nav-link text-light mr-5' do %>-->
+              <!--  <i class="fas fa-users user"></i>-->
+              <!--  <%# end %>-->
+              <!--</li>-->
+              <!--<li>-->
+              <!--  <%#=  link_to games_path ,class: 'nav-link text-light mr-5' do %>-->
+              <!--  <i class="fas fa-gamepad game"></i>-->
+              <!--  <%# end %>-->
+              <!--</li>-->
+              <!--<li>-->
+              <!--  <%#= link_to new_game_path, class: 'nav-link text-light mr-5' do %>-->
+              <!--  <i class="far fa-plus-square plus"></i>-->
+              <!--  <%# end %>-->
+              <!--</li>-->
+              <!--<li>-->
+              <!--  <%#= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light mr-5' do %>-->
+              <!--  <i class="fas fa-sign-out-alt logout"></i>-->
+              <!--  <%# end %>-->
+              <!--</li>-->
+
+              <!--<%# else %>-->
+              <!--<li>-->
+              <!--  <%#= link_to games_path, class: 'nav-link text-light mr-5' do %>-->
+              <!--    <i class="fas fa-gamepad game"></i>-->
+              <!--  <%# end %>-->
+              <!--</li>-->
+              <!--<li>-->
+              <!--  <%#= link_to new_user_registration_path, class: 'nav-link text-light mr-5' do %>-->
+              <!--    <i class="fas fa-user-plus signup"></i>-->
+              <!--  <%# end %>-->
+              <!--</li>-->
+              <!--<li>-->
+              <!--  <%#= link_to new_user_session_path, class: 'nav-link text-light mr-5' do %>-->
+              <!--   <i class="fas fa-sign-in-alt login"></i>-->
+              <!--  <%# end %>-->
+              <!--</li>-->
             <% end %>
             </ul>
           </div>
