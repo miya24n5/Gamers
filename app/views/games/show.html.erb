@@ -47,6 +47,7 @@
           <!--コメント欄-->
           <h4 class="text-white">コメント欄</h4>
           <div class="gm-comment">
+            コメントがありません
             <% @game.game_comments.each do |game_comment| %>
               <%= image_tag game_comment.user.get_profile_image(40,40),class: "rounded-circle"; %>
               <%= game_comment.user.name %>
@@ -68,7 +69,7 @@
 </div>
 <div class="container mt-3">
   <div class="row">
-    <div class="col-5">
+    <div class="col-5 mx-auto">
       <!--コメント記入欄-->
       <%= form_with model: [@game, @game_comment] do |f| %>
         <%= f.text_area :comment, rows: '5', placeholder: "コメント記入欄", class: 'form-control' %>

@@ -9,7 +9,7 @@
               <%= image_tag @user.get_profile_image(100,100), class: "rounded-circle"; %>
             </div>
             <div class="col-10">
-              <%= @user.introduction %><br>
+              <%= @user.introduction %>
             </div>
           </div>
           <div class="row">
@@ -24,12 +24,16 @@
                   <% end %>
                 </button>
                 <% end %>
+                <% if @user == current_user %>
+                <div class="text-right">
+                  <button type="button" class="btn btn-outline-info mt-2">
+                    <%= link_to "Profile編集", edit_user_path(@user), class: "text-info"; %>
+                  </button>
+                </div>
+              <% end %>
               </div>
             </div>
           </div>
-
-
-
           <!--フォローフォロワーボタン-->
 
           <div class="row">
@@ -46,15 +50,6 @@
             <div class="col-3">
               <%= link_to user_followers_path(@user), class: "text-dark mb-2" do %>
                 <h6>フォロワー数: <%= @user.followers.count %></h6>
-              <% end %>
-            </div>
-            <div class="col-3">
-              <% if @user == current_user %>
-                <div class="text-right">
-                  <button type="button" class="btn btn-outline-info mt-2">
-                    <%= link_to "Profile編集", edit_user_path(@user), class: "text-info"; %>
-                  </button>
-                </div>
               <% end %>
             </div>
           </div>

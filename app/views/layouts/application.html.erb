@@ -27,6 +27,8 @@
                 <object><a data-text="Mypage">Mypage</a></object>
                 <% end %>
               </li>
+
+              <!--aタグをobjectタグで囲むとlink_toを使える-->
               <li style="--clr:#7fbfff">
                 <%= link_to users_path do %>
                 <object><a data-text="User">User</a></object>
@@ -115,11 +117,11 @@
     <main>
       <%= yield %>
     </main>
-    <footer class="bg-dark">
+    <footer>
       <div class='container'>
   	    <div class='row'>
     	    <div class='mx-auto'>
-    		    <p>GMS</p>
+    		    <div class="footer-text">© 2022 GMS</div>
     	    </div>
         </div>
       </div>
