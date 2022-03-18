@@ -1,0 +1,4 @@
+<%= form_with model: [@game, game_comment], local: false do |f| %>
+  <%= f.text_area :comment, rows: '5', placeholder: "コメント記入欄", class: 'form-control' %>
+  <%= f.submit "送信", class: "btn btn-secondary mt-2" %>
+<% end %>

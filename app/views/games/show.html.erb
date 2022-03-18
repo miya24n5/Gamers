@@ -45,23 +45,7 @@
         </div>
         <div class="offset-1 col-4">
           <!--コメント欄-->
-          <h4 class="text-white">コメント欄</h4>
-          <div class="gm-comment">
-            コメントがありません
-            <% @game.game_comments.each do |game_comment| %>
-              <%= image_tag game_comment.user.get_profile_image(40,40),class: "rounded-circle"; %>
-              <%= game_comment.user.name %>
-              <%= game_comment.comment %>
-              <% if game_comment.user == current_user %>
-              <div class="btn btn-outline-danger text-nowrap btn-sm">
-                <%= link_to "削除", game_game_comment_path(game_comment.game, game_comment), method: :delete, class: "text-danger text-right"; %>
-              </div>
-              <% end %>
-              <div style="font-size:5px"; >
-                <%= game_comment.created_at.strftime('%Y/%m/%d') %>
-              </div>
-            <% end %>
-          </div>
+          <%= render 'game_comments/game_comments', game: @game, game_comment: @game_comment %>
         </div>
       </div>
     </div>
@@ -69,12 +53,9 @@
 </div>
 <div class="container mt-3">
   <div class="row">
-    <div class="col-5 mx-auto">
+    <div class="col-5">
       <!--コメント記入欄-->
-      <%= form_with model: [@game, @game_comment] do |f| %>
-        <%= f.text_area :comment, rows: '5', placeholder: "コメント記入欄", class: 'form-control' %>
-        <%= f.submit "送信", class: "btn btn-secondary mt-2" %>
-      <% end %>
+      <%= render 'game_comments/form', game_comment: @game_comment %>
     </div>
   </div>
 </div>
