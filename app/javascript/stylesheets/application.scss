@@ -23,6 +23,10 @@ main
   flex: 1;
 }
 
+.row{
+    margin-right: initial;
+    margin-left: initial;
+}
 
 // top画面のデザイン
 .top
@@ -117,13 +121,13 @@ ul li a:hover
 }
 
 
-// ゲーム一覧の表示方法
+// games/index.htmlゲーム一覧の表示方法
 .game-card
 {
   background-color: white;
   margin: 0 auto 60px;
   max-width: 376px;
-  height: 170px;
+  height: 115px;
   text-align: left;
 }
 
@@ -139,8 +143,8 @@ ul li a:hover
 .gm-comment
 {
   padding: 5px;
-  width: 500px;
-  height: 200px;
+  width: 800px;
+  height: 150px;
   overflow: scroll;
   background: white;
   white-space: nowrap;
@@ -152,23 +156,27 @@ ul li a:hover
 //   height: 5px;
 // }
 /* スクロールバーの形を設定する */
-.gm-comment::-webkit-scrollbar-thumb
+// .gm-comment::-webkit-scrollbar-thumb
 // {
 //   border-radius: 0.25rem;
 // }
 /* スクロールバーの色を設定する */
-.gm-comment::-webkit-scrollbar-thumb
+// .gm-comment::-webkit-scrollbar-thumb
 // {
 //   background-color: #a9a9a9;
 // }
 
-.footer-color
+footer
 {
   background-color: #212121;
 }
 
 .footer-text
 {
-  margin: 10px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
   color: #808080;
+  background-color: #212121;
 }

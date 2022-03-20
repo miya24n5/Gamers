@@ -2,8 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="card w-50 shadow-lg mt-3">
-      <div class="card-body">
-        <div class="col-12">
+      <div class="card-body col-lg-12 col-ms-12">
+        <!--<div class="col-lg-12">-->
           <h4 class="game-title"><%= @game.title %></h4><br>
           <%= @game.body %>
           <!--星レビュー表示-->
@@ -27,10 +27,10 @@
               </div>
               <!--コメントの数-->
               <div class="text-left">
-                <%= @game.game_comments.count %>件のコメント<br>
+                <i class="fas fa-comment"></i> <%= @game.game_comments.count %>
               </div>
                 <!--投稿日時-->
-                < 投稿日時 > <%= @game.created_at.strftime('%Y/%m/%d') %>
+                <i class="fas fa-calendar-alt"></i> <%= @game.created_at.strftime('%Y/%m/%d') %>
                 <% if @game.user == current_user %>
                   <button type="button" class="btn btn-outline-info ml-2">
                     <%= link_to '編集', edit_game_path(@game), class: "text-info"; %>
@@ -40,12 +40,11 @@
                   </button>
                 <% end %>
               </div>
-            </div>
+            <!--</div>-->
           </div>
         </div>
-        <div class="offset-1 col-4">
-          <!--コメント欄-->
-          <%= render 'game_comments/game_comments', game: @game, game_comment: @game_comment %>
+        <div class="offset-1 col-lg-4">
+          <%= render 'game_comments/form', game_comment: @game_comment %>
         </div>
       </div>
     </div>
@@ -55,7 +54,10 @@
   <div class="row">
     <div class="col-5">
       <!--コメント記入欄-->
-      <%= render 'game_comments/form', game_comment: @game_comment %>
+      <div id="comments_area">
+          <!--コメント欄-->
+          <%= render 'game_comments/game_comments', game: @game %>
+          </div>
     </div>
   </div>
 </div>

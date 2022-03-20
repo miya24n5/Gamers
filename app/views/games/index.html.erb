@@ -21,9 +21,7 @@
                             score: '<%= game.star %>',
                         });
                     </script>
-                    投稿者: <%= game.user.name %><br>
-                    いいね数: <%= game.favorites.count %><br>
-                    コメント数: <%= game.game_comments.count %>
+                    <i class="fas fa-user"></i> <%= game.user.name %>
                 </div>
             </div>
         <% end %>
