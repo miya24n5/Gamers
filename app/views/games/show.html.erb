@@ -29,6 +29,12 @@
               <div class="text-left">
                 <i class="fas fa-comment"></i> <%= @game.game_comments.count %>
               </div>
+              <div class="tag mb-2">
+                <i class="fas fa-tags"></i>
+                <% @game.tags.each do |tag| %>
+                <u><%= tag.name %></u>
+                <% end %>
+              </div>
                 <!--投稿日時-->
                 <i class="fas fa-calendar-alt"></i> <%= @game.created_at.strftime('%Y/%m/%d') %>
                 <% if @game.user == current_user %>
@@ -55,9 +61,9 @@
     <div class="col-5">
       <!--コメント記入欄-->
       <div id="comments_area">
-          <!--コメント欄-->
-          <%= render 'game_comments/game_comments', game: @game %>
-          </div>
+        <!--コメント欄-->
+        <%= render 'game_comments/game_comments', game: @game %>
+      </div>
     </div>
   </div>
 </div>

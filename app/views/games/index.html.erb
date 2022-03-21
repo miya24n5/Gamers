@@ -1,5 +1,13 @@
 <h1 class="h1-tagu">Game</h1>
-<div class="texts-wrapper mt-5">
+<div class="container">
+    <div class="row">
+        <div class="page-color">
+            <%= paginate(@games) %>
+        </div>
+    </div>
+</div>
+
+<div class="texts-wrapper">
     <div class="row">
         <% @games.each do |game| %>
         <div class="col-12 col-md-6 col-lg-4">
@@ -25,15 +33,6 @@
                 </div>
             </div>
         <% end %>
-        </div>
-    </div>
- </div>
- <div class="container">
-    <div class="row">
-        <div class="col mx-auto">
-            <div class="text-white">
-                <%= paginate(@games) %>
-            </div>
         </div>
     </div>
  </div>

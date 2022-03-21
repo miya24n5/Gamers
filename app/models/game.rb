@@ -7,6 +7,10 @@ class Game < ApplicationRecord
   belongs_to :user
   has_many :game_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :game_tags, dependent: :destroy
+  has_many :tags, through: :game_tags, dependent: :destroy
+
+
   # バリデーション
   validates :title, presence: true
   validates :body, presence: true

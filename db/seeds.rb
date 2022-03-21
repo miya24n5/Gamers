@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Tag.create([
+  { name: 'PS4'},
+  { name: 'PS5'},
+  { name: 'Switch'},
+  { name: 'Xbox One'},
+  { name: 'Steam'},
+  { name: '初心者向き'},
+  { name: 'アクション'},
+  { name: 'アクションRPG'},
+  { name: 'RPG'},
+  { name: 'アクションアドベンチャー'},
+  { name: 'アクションシューティング'},
+  { name: 'アドベンチャー'},
+  { name: 'FPS・TPS'},
+  { name: 'シューティング'},
+  { name: 'アクションパズル'},
+  { name: 'パズル'},
+  { name: 'シミュレーション'},
+  { name: 'シミュレーションRPG'},
+  { name: 'レーシングアクション'},
+  { name: 'レース'},
+  { name: 'テーブル(将棋、トランプなど)'},
+  { name: '音楽'},
+  { name: '格闘'},
+  { name: 'クイズ'},
+  { name: 'スポーツ'},
+  { name: 'バラエティー'},
+  { name: '教育、実用'},
+  { name: 'リアルタイムストラテジー'},
+  { name: 'コンストラクション'},
+  { name: 'その他'},
+  ])
