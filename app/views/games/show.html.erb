@@ -29,7 +29,8 @@
               <div class="text-left">
                 <i class="fas fa-comment"></i> <%= @game.game_comments.count %>
               </div>
-              <div class="tag mb-2">
+              <!--タグ,ジャンル-->
+              <div class="tag mb-2 text-left">
                 <i class="fas fa-tags"></i>
                 <% @game.tags.each do |tag| %>
                 <u><%= tag.name %></u>
