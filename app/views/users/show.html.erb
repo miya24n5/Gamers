@@ -44,12 +44,12 @@
             </div>
             <div class="col-3">
               <%= link_to user_followings_path(@user), class: "text-dark mb-2" do %>
-                <h6>フォロー数: <%= @user.followings.count %></h6>
+                <u><h6>フォロー数: <%= @user.followings.count %></h6></u>
               <% end %>
             </div>
             <div class="col-3">
               <%= link_to user_followers_path(@user), class: "text-dark mb-2" do %>
-                <h6>フォロワー数: <%= @user.followers.count %></h6>
+                <u><h6>フォロワー数: <%= @user.followers.count %></h6></u>
               <% end %>
             </div>
           </div>
