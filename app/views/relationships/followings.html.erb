@@ -17,7 +17,11 @@
         <% @users.each do |user| %>
         <tr>
           <td><%= image_tag user.get_profile_image(50,50),class: "rounded-circle"; %></td>
-          <td><%= user.name %></td>
+          <td>
+            <%= link_to user_path(user.id) do %>
+            <%= user.name %>
+            <% end %>
+          </td>
           <td>投稿数<%= user.games.count %></td>
           <td>フォロー数:<%= user.followings.count %></td>
           <td>フォロワー数:<%= user.followers.count %></td>

@@ -35,7 +35,7 @@ class GamesController < ApplicationController
     if @game.update(game_params)
       redirect_to game_path(@game)
     else
-      render game_path(@game)
+      render :edit
     end
   end
 

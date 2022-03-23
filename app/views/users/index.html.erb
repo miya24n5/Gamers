@@ -21,7 +21,7 @@
             <td><%= image_tag user.get_profile_image(50,50),class: "rounded-circle"; %></td>
             <td>
               <%= link_to user_path(user.id) do %>
-              <span class="text-white"><%= user.name %></span>
+              <span class="text-white border-bottom"><%= user.name %></span>
               <% end %>
             </td>
             <td><%= user.introduction %></td>

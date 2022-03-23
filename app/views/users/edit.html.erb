@@ -1,4 +1,15 @@
 <h1 class="h1-tagu">Profile編集</h1>
+<div class="errors-text">
+  <% if @user.errors.any? %>
+  <%= @user.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
+
 <div class='container mt-5'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">

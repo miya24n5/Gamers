@@ -1,5 +1,6 @@
 <h1 class="h1-tagu">ゲームレビュー編集</h1>
-<% if @game.errors.any? %>
+<div class="errors-text">
+  <% if @game.errors.any? %>
   <%= @game.errors.count %>件のエラーが発生しました
   <ul>
     <% @game.errors.full_messages.each do |message| %>
@@ -7,8 +8,10 @@
     <% end %>
   </ul>
 <% end %>
+</div>
+
 <div class="card-list-container py-5">
-  <div class="card w-50 mx-auto mt-4 shadow-lg">
+  <div class="card w-50 mx-auto shadow-lg">
     <div class="card-body">
       <div class="row">
         <div class="col-12">

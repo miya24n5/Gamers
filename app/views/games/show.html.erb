@@ -43,12 +43,8 @@
                 <!--投稿日時-->
                 <i class="fas fa-calendar-alt"></i> <%= @game.created_at.strftime('%Y/%m/%d') %>
                 <% if @game.user == current_user %>
-                  <button type="button" class="btn btn-outline-info ml-2">
-                    <%= link_to '編集', edit_game_path(@game), class: "text-info"; %>
-                  </button>
-                  <button type="button" class="btn btn-outline-danger ml-2">
-                    <%= link_to '削除', game_path(@game), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "text-danger"; %>
-                  </button>
+                    <%= link_to '編集', edit_game_path(@game), class: "btn btn-outline-info text-info"; %>
+                    <%= link_to '削除', game_path(@game), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-outline-danger text-danger"; %>
                 <% end %>
               </div>
             <!--</div>-->
