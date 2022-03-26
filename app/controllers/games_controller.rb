@@ -8,7 +8,10 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.page(params[:page]).per(9)
+    # タグに関する記述
+    @tags = Tag.all
+    games = params[:name].present? ? Tag.find(params[:name]).games : Game.all
+    @games = games.page(params[:page]).per(9)
   end
 
   def show

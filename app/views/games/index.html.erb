@@ -6,7 +6,21 @@
         </div>
     </div>
 </div>
-
+<button class="tag-name">
+    <i class="fas fa-tags"></i>タグ一覧で検索
+</button>
+<%= form_tag games_path, method: :get, class: 'boards__searchForm' do %>
+<div class="row">
+    <div class="tag-box1">
+        <% @tags.each do |tag| %>
+            <%= link_to tag.name, games_path(name: tag.id), class: 'text-white' %>
+        <% end %>
+    </div>
+      <div class="tag-box2">
+        <%= link_to "・全てのゲーム", games_path, class: 'text-white mb-2' %>
+      </div>
+</div>
+<% end %>
 <div class="texts-wrapper">
     <div class="row">
         <% @games.each do |game| %>

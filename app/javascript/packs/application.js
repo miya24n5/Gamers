@@ -16,6 +16,7 @@ import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
 import 'packs/homes.css'
 import 'packs/games.css'
+import 'tag.js'
 
 
 // 星レビューに必要

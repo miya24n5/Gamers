@@ -191,3 +191,35 @@ footer
   text-align: center;
   color: #ff7f7f;
 }
+
+// game/indexのtag検索
+.tag-name
+{
+  // background-color: #3498DB;
+  // color: white;
+  // padding: 16px;
+  // font-size: 16px;
+  margin: 0 0 0 50px;
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.tag-box1
+{
+  width: 80%;
+  height: 100px;
+  color: #333333;
+  margin: 4px;
+  // 画面から消す記述↓
+  display: none;
+  background-color: #000000;
+  text-align: center;
+  position: center;
+}
+.tag-box2
+{
+  margin: 0 0 0 50px;
+}
