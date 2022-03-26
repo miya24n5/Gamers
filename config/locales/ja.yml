@@ -6,3 +6,13 @@ ja:
       previous: "&lsaquo; 前のページ"
       next: "次のページ &rsaquo;"
       truncate: "..."
+
+  activerecord:
+    attributes:
+      game:
+        title: "タイトル"
+        body: "レビュー"
+        star: "星評価"
+
+      user:
+        name: "名前"

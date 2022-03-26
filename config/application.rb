@@ -13,6 +13,7 @@ module Gamers
 
     # 日本語化
     config.i18n.default_locale = :ja
+    
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+  attributes:
+    models:
+      game: ゲーム
+    attributes:
+      game:
+        title: タイトル
+        body: レビュー
+        star: 星評価
