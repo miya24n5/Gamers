@@ -10,7 +10,6 @@
           <th></th>
           <th></th>
           <th></th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +24,6 @@
           <td>投稿数<%= user.games.count %></td>
           <td>フォロー数:<%= user.followings.count %></td>
           <td>フォロワー数:<%= user.followers.count %></td>
-          <td><%= link_to 'Show', user, class: 'user_#{user.id}' %></td>
         </tr>
         <% end %>
       </tbody>
