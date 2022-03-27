@@ -20,8 +20,8 @@
         <tbody>
           <tr>
             <td><%= user.id %></td>
-            <!--このクラスは画像を丸くさせるclass-->
-            <td><%= image_tag user.get_profile_image(50,50),class: "rounded-circle"; %></td>
+            <!--このクラスは画像を丸くさせるclass、↓size:100x100を追加すると画像が横長でもまん丸になる-->
+            <td><%= image_tag user.get_profile_image(50,50),size: '50x50',class: "border border-dark rounded-circle"; %></td>
             <td>
               <%= link_to user_path(user.id) do %>
               <span class="text-white border-bottom"><%= user.name %></span>
