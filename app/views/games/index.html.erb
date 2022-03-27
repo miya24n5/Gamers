@@ -9,9 +9,9 @@
             <%= link_to tag.name, games_path(name: tag.id), class: 'text-white' %>
         <% end %>
     </div>
-      <div class="tag-box2">
+    <div class="tag-box2">
         <%= link_to "・全てのゲーム", games_path, class: 'text-white mb-2' %>
-      </div>
+    </div>
 </div>
 <% end %>
 <div class="container">
@@ -31,22 +31,21 @@
                 <% end %>
                 評価
                 <div id="star-rate-<%= game.id %>"></div>
-                    <script>
-                        $('#star-rate-<%= game.id %>').empty();
-                            $('#star-rate-<%= game.id %>').raty({
-                            size: 36,
-                            starOff:  '<%= asset_path('star-off.png') %>',
-                            starOn : '<%= asset_path('star-on.png') %>',
-                            starHalf: '<%= asset_path('star-half.png') %>',
-                            half: true,
-                            readOnly: true,
-                            score: '<%= game.star %>',
-                        });
-                    </script>
-                    <i class="fas fa-user"></i> <%= game.user.name %> : <i class="fas fa-heart"></i><%= game.favorites.count %>
-                </div>
+                <script>
+                    $('#star-rate-<%= game.id %>').empty();
+                        $('#star-rate-<%= game.id %>').raty({
+                        size: 36,
+                        starOff:  '<%= asset_path('star-off.png') %>',
+                        starOn : '<%= asset_path('star-on.png') %>',
+                        starHalf: '<%= asset_path('star-half.png') %>',
+                        half: true,
+                        readOnly: true,
+                        score: '<%= game.star %>',
+                    });
+                </script>
+                <i class="fas fa-user"></i> <%= game.user.name %> : <i class="fas fa-heart"></i><%= game.favorites.count %>
             </div>
-        <% end %>
         </div>
+        <% end %>
     </div>
- </div>
+</div>

@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
+  # ↓URL直打ちで他人のprofile編集できないようにする記述
   before_action :correct_user, only: [:edit]
-  before_action :admin_user,     only: :destroy
+  # ↓adminのみがdestroyできる
+  before_action :admin_user, only: :destroy
 
   def index
     @users = User.page(params[:page]).per(5)
@@ -40,7 +42,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)
   end
-
+  # ↓URL直打ちで他人のprofile編集できないようにする記述
   def correct_user
     @user = User.find(params[:id])
       redirect_to (current_user) unless @user == current_user

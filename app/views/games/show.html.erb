@@ -4,56 +4,53 @@
     <div class="card w-50 shadow-lg mt-3">
       <div class="card-body col-lg-12 col-ms-12">
         <!--<div class="col-lg-12">-->
-          <h4 class="game-title"><%= @game.title %></h4><br>
-          <%= @game.body %>
-          <!--星レビュー表示-->
-          <div class="mt-2" id="star-rate-<%= @game.id %>">評価 </div>
-            <script>
-            $('#star-rate-<%= @game.id %>').empty();
-              $('#star-rate-<%= @game.id %>').raty({
-                  size: 36,
-                  starOff:  '<%= asset_path('star-off.png') %>',
-                  starOn : '<%= asset_path('star-on.png') %>',
-                  starHalf: '<%= asset_path('star-half.png') %>',
-                  half: true,
-                  readOnly: true,
-                  score: '<%= @game.star %>',
-                });
-              </script>
-              <div class="text-right">
-                <!--いいねボタンの部分テンプレート-->
-              <div id="favorites_<%= @game.id %>">
-                <%= render "favorites/favorites", game: @game %>
-              </div>
-              <!--コメントの数-->
-              <div class="text-left">
-                <i class="fas fa-comment"></i> <%= @game.game_comments.count %>
-              </div>
-              <!--タグ,ジャンル-->
-              <div class="tag mb-2 text-left">
-                <i class="fas fa-tags"></i>
-                <% @game.tags.each do |tag| %>
-                <u><%= tag.name %></u>
-                <% end %>
-              </div>
-              <!--投稿者名-->
-              <%= link_to (@game.user), class: "text-dark" do %>
-              <u><i class="fas fa-user"></i><%= @game.user.name %></u>
-              <% end %>
-                <!--投稿日時-->
-                <i class="fas fa-calendar-alt"></i> <%= @game.created_at.strftime('%Y/%m/%d') %>
-                <% if @game.user == current_user %>
-                    <%= link_to '編集', edit_game_path(@game), class: "btn btn-outline-info text-info"; %>
-                    <%= link_to '削除', game_path(@game), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-outline-danger text-danger"; %>
-                <% end %>
-              </div>
-            <!--</div>-->
+        <h4 class="game-title"><%= @game.title %></h4><br>
+        <%= @game.body %>
+        <!--星レビュー表示-->
+        <div class="mt-2" id="star-rate-<%= @game.id %>">評価 </div>
+        <script>
+      　　  $('#star-rate-<%= @game.id %>').empty();
+          $('#star-rate-<%= @game.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: '<%= @game.star %>',
+          });
+        </script>
+        <div class="text-right">
+          <!--いいねボタンの部分テンプレート-->
+          <div id="favorites_<%= @game.id %>">
+            <%= render "favorites/favorites", game: @game %>
           </div>
-        </div>
-        <div class="offset-1 col-lg-4">
-          <%= render 'game_comments/form', game_comment: @game_comment %>
+          <!--コメントの数-->
+          <div class="text-left">
+            <i class="fas fa-comment"></i> <%= @game.game_comments.count %>
+          </div>
+          <!--タグ,ジャンル-->
+          <div class="tag mb-2 text-left">
+            <i class="fas fa-tags"></i>
+            <% @game.tags.each do |tag| %>
+            <u><%= tag.name %></u>
+            <% end %>
+          </div>
+          <!--投稿者名-->
+          <%= link_to (@game.user), class: "text-dark" do %>
+          <u><i class="fas fa-user"></i><%= @game.user.name %></u>
+          <% end %>
+          <!--投稿日時-->
+          <i class="fas fa-calendar-alt"></i> <%= @game.created_at.strftime('%Y/%m/%d') %>
+          <% if @game.user == current_user %>
+            <%= link_to '編集', edit_game_path(@game), class: "btn btn-outline-info text-info"; %>
+            <%= link_to '削除', game_path(@game), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-outline-danger text-danger"; %>
+          <% end %>
         </div>
       </div>
+    </div>
+    <div class="offset-1 col-lg-4">
+      <%= render 'game_comments/form', game_comment: @game_comment %>
     </div>
   </div>
 </div>
