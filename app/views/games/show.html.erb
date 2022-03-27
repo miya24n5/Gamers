@@ -23,7 +23,7 @@
               <div class="text-right">
                 <!--いいねボタンの部分テンプレート-->
               <div id="favorites_<%= @game.id %>">
-                <%= render "favorites/favorites", game: @game %>
+                <%= render "favorites/favorites", game: @game %><%= @game.favorites.count %>
               </div>
               <!--コメントの数-->
               <div class="text-left">
