@@ -3,8 +3,11 @@ ja:
   attributes:
     models:
       game: ゲーム
+      user: ユーザー
     attributes:
       game:
         title: タイトル
         body: レビュー
-        star: 星評価
+
+      user:
+        name:

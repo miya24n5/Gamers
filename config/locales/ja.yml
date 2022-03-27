@@ -16,3 +16,5 @@ ja:
 
       user:
         name: "名前"
+        email: "アドレス"
+        password: "パスワード"
