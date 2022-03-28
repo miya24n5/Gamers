@@ -32,7 +32,7 @@
               <!--can?からをカッコで閉じてあげればuser !=が合体できる-->
               <!--ちなみにcanはcancancanをgemで追加しているため使用可能-->
               <% if user != current_user && (can? :manage, current_user) %>
-                <%= link_to "退会", user,method: :delete, data: { confirm: '本当に退会させますか？' } %>
+                <%= link_to "退会", user,method: :delete, data: { confirm: '本当に退会させますか？' }, class: 'text-nowrap' %>
               <% end %>
             </td>
             <td>
