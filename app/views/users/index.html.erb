@@ -27,7 +27,17 @@
               <span class="text-white border-bottom"><%= user.name %></span>
               <% end %>
             </td>
-            <td><%= user.introduction %></td>
+            <td>
+              <!--管理者権限を持つ者のみ退会ボタンが表示される-->
+              <!--can?からをカッコで閉じてあげればuser !=が合体できる-->
+              <!--ちなみにcanはcancancanをgemで追加しているため使用可能-->
+              <% if user != current_user && (can? :manage, current_user) %>
+                <%= link_to "退会", user,method: :delete, data: { confirm: '本当に退会させますか？' } %>
+              <% end %>
+            </td>
+            <td>
+              <%= user.introduction %>
+            </td>
             <td>
               <!--↓unlessで自分にはフォローボタンを表示させないようにしている-->
               <% unless current_user == user %>
@@ -40,14 +50,6 @@
                   <%= link_to "フォロー", user_relationships_path(user.id), method: :post, class: "text-dark"; %>
                 </button>
               <% end %>
-              <% end %>
-            </td>
-            <td>
-              <!--管理者権限を持つ者のみ退会ボタンが表示される-->
-              <!--can?からをカッコで閉じてあげればuser !=が合体できる-->
-              <!--ちなみにcanはcancancanをgemで追加しているため使用可能-->
-              <% if user != current_user && (can? :manage, current_user) %>
-                <%= link_to "退会", user,method: :delete, data: { confirm: '本当に退会させますか？' } %>
               <% end %>
             </td>
           </tr>
